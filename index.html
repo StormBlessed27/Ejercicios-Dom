@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hamburger Menu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -13,36 +14,40 @@
 
   <div id="background">
 
-    <div id="nav-bar" class="nav-bar-active">
-      <button id="hamburguer-button">
-        <img src="/assets/hamburguer_icon.png" alt=''>
-      </button>
-      <a href="">sadasda</a>
-    </div>
-    <div id="header" class="header-title">
-      <h1 id="pricipal-title">Ejercicios DOM</h1>
+    <header class="header">
+      <h1>Ejercicios del DOM</h1>
+    </header>
 
-    </div>
-
-    <div id="div-main">
-      <div id="section-1" class="content-div">
-        <h3 class="div-titles">Section 1</h3>
-      </div>
-      <div id="section-2" class="content-div">
-        <h3 class="div-titles">Section 2</h3>
-      </div>
-      <div id="section-3" class="content-div">
-        <h3 class="div-titles">Section 3</h3>
-      </div>
-      <div id="section-4" class="content-div">
-        <h3 class="div-titles">Section 4</h3>
-      </div>
-      <div id="section-5" class="content-div">
-        <h3 class="div-titles">Section 5</h3>
-      </div>
-    </div>
-  </div>
+    <button class="panel-btn hamburger--spin" type="button">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+    <aside class="nav_Panel">
+      <nav class="nav_Menu">
+        <a href="#section1">Section 1</a>
+        <a href="#section2">Section 2</a>
+        <a href="#section3">Section 3</a>
+        <a href="#section4">Section 4</a>
+        <a href="#section5">Section 5</a>
+      </nav>
+    </aside>
+    <section id="section1" class="section">
+      <h2>Section 1</h2>
+    </section>
+    <section id="section2" class="section">
+      <h2>Section 2</h2>
+    </section>
+    <section id="section3" class="section">
+      <h2>Section 3</h2>
+    </section>
+    <section id="section4" class="section">
+      <h2>Section 4</h2>
+    </section>
+    <section id="section5" class="section">
+      <h2>Section 5</h2>
+    </section>
 </body>
-<script src="./scripts/hamburgerMenu.js"></script>
+<script src="index_dom.js" type="module"></script>
 
 </html>
