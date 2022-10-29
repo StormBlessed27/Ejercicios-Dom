@@ -1,11 +1,12 @@
-const $hamburguerButton = document.getElementById("hamburger-button"),
-  $domFragment = document.createDocumentFragment();
+const $hamburguerButton = document.getElementById("hamburguer-button"),
+  $navDiv = document.getElementById("nav-bar");
 
 $hamburguerButton.addEventListener("click", (e) => {
-  let $navDiv = document.createElement("div");
-  $navDiv.id = "new-menu";
-  console.log($navDiv);
-  $domFragment.append($navDiv);
-  console.log($domFragment);
-  document.body.prepend($domFragment);
+  if ($navDiv.classList.contains("nav-bar-active")) {
+    $navDiv.classList.remove("nav-bar-active");
+    $navDiv.classList.add("nav-bar-desactivate");
+  } else if ($navDiv.classList.contains("nav-bar-desactivate")) {
+    $navDiv.classList.remove("nav-bar-desactivate");
+    $navDiv.classList.add("nav-bar-active");
+  }
 });
