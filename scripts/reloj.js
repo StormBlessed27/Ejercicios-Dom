@@ -1,22 +1,13 @@
-export default function reloj(
-  sectionId,
-  initBtn,
-  stopBtn,
-  inAlarmBtn,
-  stpAlarmBtn,
-  watchText,
-  alarmAudio
-) {
-  const $d = document,
-    $watchSection = $d.getElementById(sectionId);
+const $d = document;
+export function reloj(sectionId, initBtn, stopBtn, watchText) {
+  const $watchSection = $d.getElementById(sectionId);
   let intervalo, $btn, $audio;
 
   $d.addEventListener("click", (e) => {
-    console.log(e.target);
-
     if (e.target.matches(initBtn)) {
       $btn = $d.querySelector(initBtn);
       $btn.setAttribute("disabled", "true");
+      $d.querySelector(watchText).textContent = new Date().toLocaleTimeString();
       intervalo = setInterval(() => {
         $d.querySelector(watchText).textContent =
           new Date().toLocaleTimeString();
@@ -28,23 +19,26 @@ export default function reloj(
       $btn.removeAttribute("disabled");
       $btn = undefined;
     }
+  });
+}
+
+export function alarm(sound, inAlarmBtn, stpAlarmBtn) {
+  let alarmTemp;
+  const $audio = $d.createElement("audio");
+  $audio.src = sound;
+  $d.addEventListener("click", (e) => {
     if (e.target.matches(inAlarmBtn)) {
-      $btn = $d.querySelector(inAlarmBtn);
-      $audio = $d.createElement("audio");
-      $audio.setAttribute("src", "/assets/ahhhhhhh-sound-effect.mp3");
-      $audio.setAttribute("preload", "auto");
-      $audio.setAttribute("autoplay", "true");
-      $audio.setAttribute("id", "alarm-audio");
-      $audio.setAttribute("loop", "true");
-      $btn.setAttribute("disabled", "true");
-      $watchSection.append($audio);
-      console.log($audio);
-      console.log($watchSection);
+      alarmTemp = setTimeout(() => {
+        $audio.play();
+        //$audio.loop = true; Activalo solo si quieres sufrir un rato XD
+      }, 1000);
+      e.target.disabled = true;
     }
     if (e.target.matches(stpAlarmBtn)) {
-      $btn.removeAttribute("disabled");
-      $btn = undefined;
-      $watchSection.removeChild($audio);
+      clearTimeout(alarmTemp);
+      $audio.pause();
+      $audio.currentTime = 0;
+      $d.querySelector(inAlarmBtn).disabled = false;
     }
   });
 }
