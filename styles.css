@@ -129,3 +129,16 @@ img {
 .watch-btn:active {
   background-color: beige;
 }
+
+#section2 div {
+  height: 30rem;
+
+  background-color: var(--second-color);
+}
+
+#section2 div svg {
+  height: 100%;
+  width: 100%;
+
+  fill: var(--main-color);
+}
