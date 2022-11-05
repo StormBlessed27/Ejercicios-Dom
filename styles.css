@@ -130,15 +130,16 @@ img {
   background-color: beige;
 }
 
-#section2 div {
-  height: 30rem;
-
+.stage {
+  display: flex;
+  min-height: 50vh;
   background-color: var(--second-color);
 }
 
-#section2 div svg {
-  height: 100%;
-  width: 100%;
-
-  fill: var(--main-color);
+.ball {
+  margin: auto;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: var(--main-color);
 }
