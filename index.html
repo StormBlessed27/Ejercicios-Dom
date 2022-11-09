@@ -12,7 +12,7 @@
 
 <body>
 
-  <div id="background">
+  <div id="background" data-dark class="">
 
     <header class="header">
       <h1>Ejercicios del DOM</h1>
@@ -23,23 +23,30 @@
         <span class="hamburger-inner"></span>
       </span>
     </button>
+
+    <button class="scroll-up-btn hidden"> ⬆</button>
+    <button class="darkmode-btn">🌙</button>
     <aside class="nav_Panel">
       <nav class="nav_Menu">
         <a href="#section1">Reloj y Alarma</a>
         <a href="#section2">Eventos de Teclado y Atajos</a>
-        <a href="#section3">Section 3</a>
-        <a href="#section4">Section 4</a>
-        <a href="#section5">Section 5</a>
+        <a href="#section3">Countdown</a>
+        <a href="#section4">Responsive Desing</a>
+        <a href="#section5">Responsive Tester</a>
+        <a href="#section6">Section 6</a>
+        <a href="#section7">Section 7</a>
+        <a href="#section8">Section 8</a>
+        <a href="#section9">Section 9</a>
       </nav>
     </aside>
     <section id="section1" class="section">
 
       <h2>Reloj y Alarma</h2>
       <h3 id="watch">00:00--</h3>
-      <button id="init-btn" class="watch-btn">Inicia Reloj</button>
-      <button id="stop-btn" class="watch-btn">Detener Reloj</button>
-      <button id="init-alarm" class="watch-btn">Iniciar Alarma</button>
-      <button id="stop-alarm" class="watch-btn">Detener Alarma</button>
+      <button id="init-btn" class="btn">Inicia Reloj</button>
+      <button id="stop-btn" class="btn">Detener Reloj</button>
+      <button id="init-alarm" class="btn">Iniciar Alarma</button>
+      <button id="stop-alarm" class="btn">Detener Alarma</button>
     </section>
     <section id="section2" class="section">
       <h2>Eventos de Teclado y Atajos</h2>
@@ -49,13 +56,41 @@
       </article>
     </section>
     <section id="section3" class="section">
-      <h2>Section 3</h2>
+      <h2>Countdown</h2>
+      <h3 id="countdown-title"></h3>
     </section>
     <section id="section4" class="section">
-      <h2>Section 4</h2>
+      <h2>Responsive Desing con JS</h2>
+      <div id="youtube"></div>
+      <div id="gmaps"></div>
     </section>
     <section id="section5" class="section">
-      <h2>Section 5</h2>
+      <h2>Responsive Tester</h2>
+      <form id="responsive-tester" action="">
+        <input name="url" type="url" placeholder="url" required>
+        <br>
+        <input name="width" type="text" placeholder="ancho" required>
+        <br>
+        <input name="height" type="text" placeholder="alto" required>
+        <br>
+        <br>
+        <input name="probar" type="submit" class="btn" value="Test!">
+        <input name="cerrar" type="button" class="btn" value="Close!">
+
+      </form>
+    </section>
+    <section id="section6" class="section">
+      <h2>Section 6</h2>
+    </section>
+    <section id="section7" class="section">
+      <h2>Section 7</h2>
+    </section>
+    <section id="section8" class="section">
+      <h2>Section 8</h2>
+    </section>
+    <section id="section9" class="section">
+      <h2>Section 9</h2>
+    </section>
     </section>
 </body>
 <script src="index_dom.js" type="module"></script>
