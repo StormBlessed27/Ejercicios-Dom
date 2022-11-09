@@ -52,7 +52,6 @@ export function movCricle(svgSelector) {
 */
 
 export function movBall(e, slctBall, stage) {
-  console.log(e);
   const $ball = $d.querySelector(slctBall),
     $stage = $d.querySelector(stage),
     $limitsBall = $ball.getBoundingClientRect(),
