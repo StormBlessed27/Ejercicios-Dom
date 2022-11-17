@@ -1,11 +1,22 @@
 import countdown from "./scripts/countdown.js";
 import darkTheme from "./scripts/darkmode.js";
+import detectWebcam from "./scripts/detection_webcam.js";
+import lottery from "./scripts/digital_lottery.js";
+import formValidation from "./scripts/form_validation.js";
+import detectGeolocalizacion from "./scripts/geolocacion.js";
 import hamburguerMenu from "./scripts/hamburguerMenu.js";
+import networkStatus from "./scripts/network_info.js";
 import responsiveMedia from "./scripts/objeto_responsive.js";
 import { reloj, alarm } from "./scripts/reloj.js";
 import { responsiveTester } from "./scripts/responsive_tester.js";
+import scrollSpy from "./scripts/scroll_spy.js";
 import { activeBtn, scrollUpBtn } from "./scripts/scroll_Up_Btn.js";
+import searchFilter from "./scripts/search_filter.js";
+import sliderBehavior from "./scripts/slider.js";
+import smartVideo from "./scripts/smart_video.js";
+import textToVoice from "./scripts/spech.js";
 import { movBall, shortcuts } from "./scripts/teclado.js";
+import userDeviceInfo from "./scripts/user_agent.js";
 
 const $d = document;
 $d.addEventListener("DOMContentLoaded", (e) => {
@@ -33,6 +44,15 @@ $d.addEventListener("DOMContentLoaded", (e) => {
     <iframe width="560" height="315" src="https://www.youtube.com/embed/vN_jkrpGpTw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
   );
   responsiveTester("responsive-tester");
+  //userDeviceInfo("user-device") No es recomendable el uso del userAgent
+  detectWebcam("webcam");
+  detectGeolocalizacion("geolocation");
+  searchFilter(".card", "filter-input");
+  lottery(".player", "winner-btn");
+  sliderBehavior();
+  scrollSpy();
+  smartVideo();
+  formValidation();
 });
 
 $d.addEventListener("keydown", (e) => {
@@ -45,3 +65,5 @@ $d.addEventListener("scroll", (e) => {
 });
 
 darkTheme(".darkmode-btn", "darkmode");
+networkStatus();
+textToVoice();
